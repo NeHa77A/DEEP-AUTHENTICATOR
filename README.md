@@ -45,22 +45,22 @@ Authentication Process:
 Before we run the project, make sure that you are having MongoDB in your local system, with Compass since we are using MongoDB for data storage. You also need Azure account to access the service like ACS and App services.
 
 ### Step 1-: Clone the Repository
-```
+```bash
 git clone https://github.com/NeHa77A/DEEP-AUTHENTICATOR.git
 ```
 
 ### Step 2-: Creat conda environment
-```
+```bash
 conda create -p ./venv python=3.8.13 -y
 ```
 
 ### Step 3-: Activate Conda environment
-```
+```bash
 conda activate venv/
 ```
 
 ### Step 4-: Install requirements
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -75,7 +75,7 @@ export EMBEDDING_COLLECTION_NAME=<EMBEDDING_COLLECTION_NAME>
 ```
 
 ### Step 6-: Run the project
-```
+```bash
 uvicorn app:app
 ```
 
@@ -89,5 +89,23 @@ docker build -t face_authentication .
 ```
 docker run -p 8000:8000 face_authentication
 ```
+### upload on Docker hub
+```
+docker tag face_authentictor:latest nehavish/face_authentication:v1.2
+```
+```
+docker login
+```
+```
+docker push nehavish/face_authentication:tag
+```
+### to pull docker image
+you can check the docker hub repo
 
-## Output
+https://hub.docker.com/r/nehavish/face_authentication
+
+or you can pull the docker image from the docker hub with following command
+```
+docker pull nehavish/face_authentication
+```
+![](https://raw.githubusercontent.com/NeHa77A/DEEP-AUTHENTICATOR/main/output/docker%20hub.png)
